@@ -1073,7 +1073,7 @@
 	{
 		var passwordGuess = prompt("Please enter your admin password", "");
 		var client = new HttpClient();
-		client.get('http://104.236.169.62:80/checkHaddensPassword/'+passwordGuess, function(response) {
+		client.get('http://192.168.0.37:8000//checkHaddensPassword/'+passwordGuess, function(response) {
 			var parsedJSON = (JSON.parse(response));
 			if (parsedJSON["result"] == "success")
 			{
