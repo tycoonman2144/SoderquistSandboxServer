@@ -35,6 +35,22 @@ app.get('/Uno_Card_Script.js', function(req,res){
 	res.sendFile(path.resolve(__dirname + '/../Front End/Uno_Card_Script.js'));
 });
 
+
+app.get('/oddOrEven/:number', function(req,res) {
+	if (req.params.number % 2 == 0)
+	{
+		res.send({
+			result: 'even'
+		});
+	}
+	else
+	{
+		res.send({
+			result: 'odd'
+		});
+	}	
+});
+
 app.get('/', function(req,res){
 res.sendFile(path.resolve(__dirname + '/../Front End/StudentProjectLandingPage.html'));
 });
