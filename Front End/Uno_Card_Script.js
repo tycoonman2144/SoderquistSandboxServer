@@ -300,7 +300,7 @@
 		for (var i = 0; i < cardDivs.length; i++)
 		{
 			var cardDiv = cardDivs[i];
-			if (parseFilename(cardDiv.src) == card_filename)
+			if (parseFilename(cardDiv.src) == parseFilename(card_filename))
 			{
 				return cardDiv;
 			}
@@ -572,7 +572,7 @@
 		//Finds Card In Hand, Saves Index of that card as CardIndex			
 		for (var i = 0; i < Players[RealPlayer0].Cards.length; i++)
 		{
-			if (parseFilename(card_img.src) == Players[RealPlayer0].Cards[i].filename) {
+			if (parseFilename(card_img.src) == parseFilename(Players[RealPlayer0].Cards[i].filename)) {
 				CardIndex = i;
 			}
 		}
