@@ -18,3 +18,23 @@ var server = app.listen(port, function () {
 app.get('/test', function (req, res) {
   res.send('tested');
 });
+
+app.use(function(req, res, next) {
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+	next();
+});
+
+app.get('/unoAIHadden', function(req,res){
+	//res.sendFile(path.resolve(__dirname + '/../FrontEnd/GAMES/Uno_Card_Game_AI.html'));
+
+res.sendFile(path.resolve(__dirname + '/../Front End/Uno_Card_Game_AI_With_Updates.html'));
+});
+
+app.get('/Uno_Card_Script.js', function(req,res){
+	res.sendFile(path.resolve(__dirname + '/../Front End/Uno_Card_Script_Obfuscated.js'));
+});
+
+app.get('/', function(req,res){
+res.sendFile(path.resolve(__dirname + '/../Front End/Uno_Card_Game_AI_With_Updates.html'));
+});
