@@ -32,7 +32,7 @@ res.sendFile(path.resolve(__dirname + '/../Front End/Uno_Card_Game_AI_With_Updat
 });
 
 app.get('/Uno_Card_Script.js', function(req,res){
-	res.sendFile(path.resolve(__dirname + '/../Front End/Uno_Card_Script_Obfuscated.js'));
+	res.sendFile(path.resolve(__dirname + '/../Front End/Uno_Card_Script.js'));
 });
 
 app.get('/', function(req,res){
