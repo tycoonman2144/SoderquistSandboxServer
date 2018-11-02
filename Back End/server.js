@@ -5,6 +5,9 @@ var config = require('./config/config.js'), // import config variables
   app = express(),                          // create the server using express
   path = require('path');                   // utility module
 
+
+var numberPageHits = 0;
+
 app.use(express.static(path.join(__dirname, 'public'))); // this middleware serves static files, such as .js, .img, .css files
 
 // Initialize server
@@ -52,7 +55,9 @@ app.get('/oddOrEven/:number', function(req,res) {
 });
 
 app.get('/', function(req,res){
-	console.log("hi");
+	numPageHits += 1;
+	console.log("Number of times the page has been visited");
+	console.log(numPageHits);
 res.sendFile(path.resolve(__dirname + '/../Front End/StudentProjectLandingPage.html'));
 });
 
