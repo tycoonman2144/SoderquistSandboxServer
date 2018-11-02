@@ -52,6 +52,7 @@ app.get('/oddOrEven/:number', function(req,res) {
 });
 
 app.get('/', function(req,res){
+	console.log("hi");
 res.sendFile(path.resolve(__dirname + '/../Front End/StudentProjectLandingPage.html'));
 });
 
