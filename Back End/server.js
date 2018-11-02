@@ -6,7 +6,7 @@ var config = require('./config/config.js'), // import config variables
   path = require('path');                   // utility module
 
 
-var numberPageHits = 0;
+var numPageHits = 0;
 
 app.use(express.static(path.join(__dirname, 'public'))); // this middleware serves static files, such as .js, .img, .css files
 
