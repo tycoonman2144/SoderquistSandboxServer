@@ -29,9 +29,10 @@ app.use(function(req, res, next) {
 });
 
 app.get('/unoAIHadden', function(req,res){
-	//res.sendFile(path.resolve(__dirname + '/../FrontEnd/GAMES/Uno_Card_Game_AI.html'));
-
-res.sendFile(path.resolve(__dirname + '/../Front End/Uno_Card_Game_AI_With_Updates.html'));
+	res.sendFile(path.resolve(__dirname + '/../Front End/Uno_Card_Game_AI_With_Updates.html'));
+});
+app.get('/scumAIHunter', function(req,res){
+	res.sendFile(path.resole(_dirname + '/../Front End/scumAIHunter.html'));
 });
 
 app.get('/Uno_Card_Script.js', function(req,res){
