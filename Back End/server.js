@@ -60,20 +60,27 @@ function incrementHitCountOnFile()
 	var hits;
 	var fs = require('fs');
 	fs. readFile('DataBase/hitcounter.txt', 'utf8', function(err, contents) {
+		if (err)
+		{
+			return console.log(err);
+		}
+			
 		console.log(contents);
 		hits = Number(contents);
 		hits += 1;
 	});
 	
 	fs.writeFile('DataBase/hitcounter.txt', hits, function(err) {
-    	if(err) {
-		return console.log(err);
-    	}
+		if(err) {
+			return console.log(err);
+		}
+		console.log("The file was saved!");
+		return hits;	
 
-    	console.log("The file was saved!");
-}); 
+	}); 
 	
-	
+	console.log("hits");
+	console.log(hits);
 	console.log('after calling readFile');
 }
 
