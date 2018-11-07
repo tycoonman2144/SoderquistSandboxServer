@@ -32,7 +32,7 @@ app.get('/unoAIHadden', function(req,res){
 	res.sendFile(path.resolve(__dirname + '/../Front End/Uno_Card_Game_AI_With_Updates.html'));
 });
 app.get('/scumAIHunter', function(req,res){
-	res.sendFile(path.resole(__dirname + '/../Front End/scumAIHunter.html'));
+	res.sendFile(path.resolve(__dirname + '/../Front End/scumAIHunter.html'));
 });
 
 app.get('/Uno_Card_Script.js', function(req,res){
