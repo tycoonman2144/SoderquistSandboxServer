@@ -55,10 +55,35 @@ app.get('/oddOrEven/:number', function(req,res) {
 	}	
 });
 
+function incrementHitCountOnFile()
+{
+	var hits;
+	var fs = require('fs');
+	fs. readFile('DataBase/hitcounter.txt', 'utf8', function(err, contents) {
+		console.log(contents);
+		hits = Number(contents);
+		hits += 1;
+	});
+	
+	fs.writeFile('DataBase/hitcounter.txt', hits, function(err) {
+    	if(err) {
+		return console.log(err);
+    	}
+
+    	console.log("The file was saved!");
+}); 
+	
+	
+	console.log('after calling readFile');
+}
+
 app.get('/', function(req,res){
 	numPageHits += 1;
-	console.log("Number of times the page has been visited");
+	console.log("Number of times the page has been visited since server was last restarted");
 	console.log(numPageHits);
+	var actualPageHits = incrementHitCountOnFile();
+	console.log("Number of times the page has been visited (persistent over restarts)");
+	console.log(actualPageHits);
 res.sendFile(path.resolve(__dirname + '/../Front End/StudentProjectLandingPage.html'));
 });
 
