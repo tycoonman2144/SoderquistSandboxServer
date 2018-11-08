@@ -65,23 +65,26 @@ function incrementHitCountOnFile()
 			return console.log(err);
 		}
 			
-		console.log(contents);
+		console.log(contents);		
+
 		hits = Number(contents);
+		console.log(hits);
 		hits += 1;
 		
+		console.log("hits");
+		console.log('after calling readFile');
+		
 		fs.writeFile('DataBase/hitcounter.txt', hits, function(err) {
-		if(err) {
-			return console.log(err);
-		}
-		console.log("The file was saved!");
-		var actualPageHits = hits;	
-		console.log("Number of times the page has been visited (persistent over restarts)");
-		console.log(actualPageHits);
-	}); 
+			if(err) {
+				return console.log(err);
+			}
+			console.log("The file was saved!");
+			var actualPageHits = hits;	
+			console.log("Number of times the page has been visited (persistent over restarts)");
+			console.log(actualPageHits);
+		}); 
 	
-	console.log("hits");
-	console.log(hits);
-	console.log('after calling readFile');
+	
 		
 		
 	});
