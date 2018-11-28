@@ -28,6 +28,9 @@ app.use(function(req, res, next) {
 	next();
 });
 
+
+// Add an endpoint to save a data structure as JSON to a file
+
 app.get('/unoAIHadden', function(req,res){
 	res.sendFile(path.resolve(__dirname + '/../Front End/Uno_Card_Game_AI_With_Updates.html'));
 });
