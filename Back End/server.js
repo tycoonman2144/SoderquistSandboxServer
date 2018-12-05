@@ -32,17 +32,22 @@ app.use(function(req, res, next) {
 app.post('/SaveComputerInfo', function(req,res){
 	var params = req.params;
 	//var input = JSON.parse(JSON.stringify(req.body));
-	console.log("url params: ");
+	console.log("req params: ");
 	console.log(params);
-	console.log("input body: ");
+	
+	console.log("req: ");
+	console.log(req);
+	console.log("req body: ");
 	console.log(req.body);
+
 	
 	res.send({
 		result: 'success',
 		err: ''
 	});
 
-	res.send('{ result: "error", err: "couldn\'t find an item by that barcode"}');
+	
+	//res.send('{ result: "error", err: "couldn\'t find an item by that barcode"}');
 	
 });
 
