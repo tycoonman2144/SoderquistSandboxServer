@@ -31,11 +31,11 @@ app.use(function(req, res, next) {
 
 app.post('/SaveComputerInfo', function(req,res){
 	var params = req.params;
-	var input = JSON.parse(JSON.stringify(req.body));
-	console.log("sell params: ");
+	//var input = JSON.parse(JSON.stringify(req.body));
+	console.log("url params: ");
 	console.log(params);
 	console.log("input body: ");
-	console.log(input);
+	console.log(req.body);
 	
 	res.send({
 		result: 'success',
